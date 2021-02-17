@@ -681,7 +681,7 @@
      </p>
      <br/>
      <p>
-      在不大于[$]1000[/$]的自然数中，所有个位数字为[$]8[/$]的数之和，与所有个位数字为[$]3[/$]的数之和的差是多少？
+      在不大于$1000$的自然数中，所有个位数字为$8$的数之和，与所有个位数字为$3$的数之和的差是多少？
      </p>
     </section>
     <section>
@@ -690,7 +690,7 @@
      </p>
      <br/>
      <p>
-      已知：[$]a^2-b^2=(a+b)\times(a-b)[/$]。计算：[$]20^2-19^2+18^2-17^2+16^2-15^2+\cdots+2^2-1^2[/$]
+      已知：$a^2-b^2=(a+b)\times(a-b)$。计算：$20^2-19^2+18^2-17^2+16^2-15^2+\cdots+2^2-1^2$
      </p>
     </section>
     <section>
@@ -699,7 +699,7 @@
      </p>
      <br/>
      <p>
-      观察算式[$]2000+1994-1988-1982+1976+1970-1964-1958+1952+\cdots[/$]，一直这样写下去，最后[$]4[/$]个自然数是？符号是？最终结果是？
+      观察算式$2000+1994-1988-1982+1976+1970-1964-1958+1952+\cdots$，一直这样写下去，最后$4$个自然数是？符号是？最终结果是？
      </p>
     </section>
     <section>
@@ -1015,14 +1015,21 @@
             "https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js",
           config: "TeX-AMS_HTML-full",
           // pass other options into `MathJax.Hub.Config()`
-          TeX: { Macros: { RR: "{\\bf R}" } },
+          TeX: {
+            Macros: { RR: "{\\bf R}" },
+            inlineMath: [
+              ["$", "$"],
+              ["[$]", "[/$]"],
+              ["\\(", "\\)"],
+            ],
+          },
           "HTML-CSS": {
-                linebreaks: {
-                    automatic: true
-                }
+            linebreaks: {
+              automatic: true,
             },
+          },
         },
-          plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],
       });
   </script>
  </body>
