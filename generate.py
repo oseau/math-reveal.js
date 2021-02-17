@@ -22,10 +22,17 @@ def write():
                 continue
             count += 1
             section = soup.new_tag("section")
+            num = soup.new_tag("p")
+            num.string = "({})".format(count)
+            section.append(num)
+            br = soup.new_tag("br")
+            section.append(br)
+            test = soup.new_tag("p")
             if "$" in line:
-                section.string = "({}) {}".format(count, line.strip())
+                test.string = "{}".format(line.strip())
             else:
-                section.string = "({}) ${}$".format(count, line.strip())
+                test.string = "${}$".format(line.strip())
+            section.append(test)
             div.append(section)
 
     # save the file again
